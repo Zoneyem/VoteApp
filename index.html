@@ -17,6 +17,35 @@
 		></script>
 	</head>
 	<body>
+		<div id="app">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xl-4 offset-xl-4">
+						<div class="card mt-5">
+							<div
+								class="card-header"
+								v-bind:class="cardHeaderBackground"
+								v-bind:class=" secondCard"
+							>
+								<h2 class="card-title">Stimme jetzt ab!</h2>
+								<span class="float-end"><b>{{TotalVotes}} Stimmen</b></span>
+							</div>
+							<div class="card-body">
+								<template
+									v-for="submission in sortedSubmissions"
+									:key="submission.id"
+								>
+								<submission-list-item :submission="submission"> 
+
+                                </submission-list-item>
+									<hr />
+								</template>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<script src="https://unpkg.com/vue@3.1.5"></script>
 		<script src="seed.js"></script>
 		<script src="app.js"></script>
